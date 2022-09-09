@@ -1,10 +1,12 @@
 X npm init
-- install dependencies
-    - express
-    - pg
-    - dotenv (dev)
-    - nodemon (dev)
+X install dependencies
+    X express
+    X pg
+    X dotenv (dev)
+    X nodemon (dev)
+- gitignore file for node modules
 - app.js file at root
+- start script in package.json for app.js
 - set up db
 - db folder
     - index.js file with connection (.env for variables)

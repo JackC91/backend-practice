@@ -6,11 +6,12 @@ X install dependencies
     X nodemon (dev)
 X gitignore file for node modules
 X app.js file at root
-- set up inital router
-- start script in package.json for app.js
+X set up inital router
+X start script in package.json for app.js
 - set up db
 - db folder
-    - index.js file with connection (.env for variables)
+    X index.js file with connection
+    - add db credentials to .env file
     - scripts folder
 - CRUD routes
     - POST

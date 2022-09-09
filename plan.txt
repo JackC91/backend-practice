@@ -5,7 +5,8 @@ X install dependencies
     X dotenv (dev)
     X nodemon (dev)
 X gitignore file for node modules
-- app.js file at root
+X app.js file at root
+- set up inital router
 - start script in package.json for app.js
 - set up db
 - db folder

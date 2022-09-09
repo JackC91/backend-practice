@@ -1,0 +1,19 @@
+X npm init
+- install dependencies
+    - express
+    - pg
+    - dotenv (dev)
+    - nodemon (dev)
+- app.js file at root
+- set up db
+- db folder
+    - index.js file with connection (.env for variables)
+    - scripts folder
+- CRUD routes
+    - POST
+    - GET
+    - PATCH/PUT
+    - DELETE
+- models folder with functions for each
+
+- testing

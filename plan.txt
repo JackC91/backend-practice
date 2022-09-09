@@ -4,7 +4,7 @@ X install dependencies
     X pg
     X dotenv (dev)
     X nodemon (dev)
-- gitignore file for node modules
+X gitignore file for node modules
 - app.js file at root
 - start script in package.json for app.js
 - set up db

@@ -9,12 +9,8 @@ import {
 
 const router = express.Router();
 
-//test create route
-router.get("/create", (req, res) => {
-    res.send("Create/POST route working")
-})
 
-//test read route, refactor for correct route
+//get all, by id, by name and by occupation
 router.get("/read", (req, res) => {
     const name = req.query.name;
     const id_num = req.query.id;
@@ -45,6 +41,10 @@ router.get("/read", (req, res) => {
 })
 })
 
+//test create route
+router.get("/create", (req, res) => {
+    res.send("Create/POST route working")
+})
 
 //test update route
 router.get("/update", (req, res) => {

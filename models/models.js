@@ -33,3 +33,9 @@ export function getDataByOccupation(role) {
     }
     return user;
 }
+
+export function createNewUser(body) {
+    const newData = [...data];
+    newData.push(body);
+    return newData;
+}

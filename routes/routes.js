@@ -3,7 +3,8 @@ import express from "express";
 import { 
     getData,
     getDataByName,
-    getDataById
+    getDataById,
+    getDataByOccupation
  } from "../models/models.js";
 
 const router = express.Router();
@@ -17,6 +18,7 @@ router.get("/create", (req, res) => {
 router.get("/read", (req, res) => {
     const name = req.query.name;
     const id_num = req.query.id;
+    const role = req.query.occupation;
     if(name) {
         return res.json({
             success: true,
@@ -28,6 +30,12 @@ router.get("/read", (req, res) => {
             success: true,
             status: res.statusCode,
             data: getDataById(id_num)
+    })
+    } else if (role) {
+        return res.json({
+            success: true,
+            status: res.statusCode,
+            data: getDataByOccupation(role)
     })
     }
     return res.json({

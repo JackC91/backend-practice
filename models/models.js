@@ -24,6 +24,12 @@ export function getDataById(id_num) {
     return user;
 }
 
-export function getDataByOccupation() {
-
+export function getDataByOccupation(role) {
+    let user = [];
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].occupation.toLowerCase().includes(role.toLowerCase())) {
+        user.push(data[i])
+        }
+    }
+    return user;
 }

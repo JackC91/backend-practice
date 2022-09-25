@@ -4,7 +4,8 @@ import {
     getData,
     getDataByName,
     getDataById,
-    getDataByOccupation
+    getDataByOccupation,
+    createNewUser
  } from "../models/models.js";
 
 const router = express.Router();
@@ -42,8 +43,14 @@ router.get("/read", (req, res) => {
 })
 
 //test create route
-router.get("/create", (req, res) => {
-    res.send("Create/POST route working")
+router.post("/create", (req, res) => {
+    const body = req.body;
+    return res.json({
+        sucess: true,
+        status: res.statusCode,
+        message: "New user created",
+        payload: createNewUser(body)
+    })
 })
 
 //test update route

@@ -35,7 +35,7 @@ export function getDataByOccupation(role) {
 }
 
 export function createNewUser(body) {
-    const newData = [...data];
+    const newData = data;
     newData.push(body);
     return newData;
 }

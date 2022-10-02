@@ -40,6 +40,10 @@ export function createNewUser(body) {
     return newData;
 }
 
-export function updateUser(id, body) {
-
+export function updateUser(body) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id == body.id) {
+        return [...data.slice(0, i), body, ...data.slice(i + 1)];
+        }
+    }
 }

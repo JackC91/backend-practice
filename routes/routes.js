@@ -55,14 +55,13 @@ router.post("/create", (req, res) => {
 })
 
 //test update route
-router.patch("/update", (req, res) => {
-    const id = req.query.id
+router.put("/update", (req, res) => {
     const body = req.body;
     return res.json({
         success: true,
         status: res.statusCode,
         message: "User has been updated",
-        payload: updateUser(id, body)
+        payload: updateUser(body)
     })
 })
 

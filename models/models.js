@@ -48,6 +48,26 @@ export function updateUser(body) {
     }
 }
 
-export function deleteUser(id) {
-    
+export function deleteUserById(id) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id == id) {
+        return [...data.slice(0, i), ...data.slice(i + 1)];
+        }
+    }
+}
+
+export function deleteUserByName(name) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].name.toLowerCase().includes(name.toLowerCase())) {
+        return [...data.slice(0, i), ...data.slice(i + 1)];
+        }
+    }
+}
+
+export function deleteUserByRole(role) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].occupation.toLowerCase().includes(role.toLowerCase())) {
+        return [...data.slice(0, i), ...data.slice(i + 1)];
+        }
+    }
 }

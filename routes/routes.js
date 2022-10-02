@@ -7,7 +7,9 @@ import {
     getDataByOccupation,
     createNewUser,
     updateUser,
-    deleteUser
+    deleteUserById,
+    deleteUserByName,
+    deleteUserByRole
  } from "../models/models.js";
 
 const router = express.Router();
@@ -22,19 +24,19 @@ router.get("/read", (req, res) => {
         return res.json({
             success: true,
             status: res.statusCode,
-            data: getDataByName(name)
+            payload: getDataByName(name)
     })
     } else if (id_num) {
         return res.json({
             success: true,
             status: res.statusCode,
-            data: getDataById(id_num)
+            payload: getDataById(id_num)
     })
     } else if (role) {
         return res.json({
             success: true,
             status: res.statusCode,
-            data: getDataByOccupation(role)
+            payload: getDataByOccupation(role)
     })
     }
     return res.json({
@@ -69,12 +71,30 @@ router.put("/update", (req, res) => {
 //test delete route
 router.delete("/delete", (req, res) => {
     const id = req.query.id;
+    const name = req.query.name;
+    const role = req.query.occupation;
+    if (id) {
     return res.json({
         success: true,
         status: res.statusCode,
         message: "User has been deleted",
-        payload: deleteUser(id)
+        payload: deleteUserById(id)
     })
+} else if (name) {
+    return res.json({
+        success: true,
+        status: res.statusCode,
+        message: "User has been deleted",
+        payload: deleteUserByName(name)
+    })
+} else if (role) {
+    return res.json({
+        success: true,
+        status: res.statusCode,
+        message: "User has been deleted",
+        payload: deleteUserByRole(role)
+})
+}
 })
 
 

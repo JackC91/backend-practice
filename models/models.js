@@ -39,3 +39,7 @@ export function createNewUser(body) {
     newData.push(body);
     return newData;
 }
+
+export function updateUser(id, body) {
+
+}

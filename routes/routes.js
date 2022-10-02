@@ -5,7 +5,8 @@ import {
     getDataByName,
     getDataById,
     getDataByOccupation,
-    createNewUser
+    createNewUser,
+    updateUser
  } from "../models/models.js";
 
 const router = express.Router();
@@ -54,8 +55,15 @@ router.post("/create", (req, res) => {
 })
 
 //test update route
-router.get("/update", (req, res) => {
-    res.send("Update/PUT/PATCH route working")
+router.patch("/update", (req, res) => {
+    const id = req.query.id
+    const body = req.body;
+    return res.json({
+        success: true,
+        status: res.statusCode,
+        message: "User has been updated",
+        payload: updateUser(id, body)
+    })
 })
 
 //test delete route

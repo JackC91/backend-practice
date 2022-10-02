@@ -6,7 +6,8 @@ import {
     getDataById,
     getDataByOccupation,
     createNewUser,
-    updateUser
+    updateUser,
+    deleteUser
  } from "../models/models.js";
 
 const router = express.Router();
@@ -66,8 +67,14 @@ router.put("/update", (req, res) => {
 })
 
 //test delete route
-router.get("/delete", (req, res) => {
-    res.send("Delete/DELETE route working")
+router.delete("/delete", (req, res) => {
+    const id = req.query.id;
+    return res.json({
+        success: true,
+        status: res.statusCode,
+        message: "User has been deleted",
+        payload: deleteUser(id)
+    })
 })
 
 

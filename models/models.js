@@ -47,3 +47,7 @@ export function updateUser(body) {
         }
     }
 }
+
+export function deleteUser(id) {
+    
+}
